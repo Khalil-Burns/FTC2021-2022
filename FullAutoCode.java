@@ -211,11 +211,11 @@ public class full extends LinearOpMode {
             fwdback = gamepad2.left_stick_y;
 
             strafe = gamepad2.left_stick_x;
-            turn = -gamepad2.right_stick_x;
-            leftfront = (fwdback + strafe + turn);
-            rightfront = (fwdback - strafe - turn);
-            leftback = (fwdback - strafe + turn);
-            rightback = (fwdback + strafe - turn);
+            turn = gamepad2.right_stick_x;
+            leftfront = (fwdback + strafe - turn);
+            rightfront = (fwdback - strafe + turn);
+            leftback = (fwdback - strafe - turn);
+            rightback = (fwdback + strafe + turn);
             max = Math.abs(leftfront);
             if(Math.abs(rightfront) > max){ max = Math.abs(rightfront);}
             else if(Math.abs(rightback) > max) {max = Math.abs(rightback);}
