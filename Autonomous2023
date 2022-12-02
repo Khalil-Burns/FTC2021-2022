@@ -111,16 +111,20 @@ public class AutonomousTest extends LinearOpMode {
         ///////////////////////
         RobotMoveEncoderPositions(14, 1, true, false);
         Forward(13, 1);
-        int[] ans = colors();
-        sleep(1000);
-        if(ans[0] == 1){
-            Forward(10, 1);
-        }else if(ans[1] == 1){
-            Forward(8, 1);
-            RobotMoveEncoderPositions(15, 1, false, true);
-        }else if(ans[2] == 1){
-            Forward(8, 1);
-            RobotMoveEncoderPositions(16, 1, true, false);
+        while(true) {
+            int[] ans = colors();
+            if (ans[0] == 1) {
+                Forward(10, 1);
+                break;
+            } else if (ans[1] == 1) {
+                Forward(8, 1);
+                RobotMoveEncoderPositions(20, 1, false, true);
+                break;
+            } else if (ans[2] == 1) {
+                Forward(8, 1);
+                RobotMoveEncoderPositions(20, 1, true, false);
+                break;
+            }
         }
 
     }
